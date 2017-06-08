@@ -19,5 +19,11 @@ public class SolutionTest {
     @Test
     void testSolution() {
         assertArrayEquals(new int[]{}, solution.solution(new int[]{}, 0));
+        assertArrayEquals(new int[]{0}, solution.solution(new int[]{0}, 0));
+        assertArrayEquals(new int[]{0}, solution.solution(new int[]{0}, 1));
+        assertArrayEquals(new int[]{0, 1}, solution.solution(new int[]{0, 1}, 0));
+        assertArrayEquals(new int[]{1, 0}, solution.solution(new int[]{0, 1}, 1));
+        assertArrayEquals(new int[]{0, 1}, solution.solution(new int[]{0, 1}, 2));
+        assertArrayEquals(new int[]{9, 7, 6, 3, 8}, solution.solution(new int[]{3, 8, 9, 7, 6}, 3));
     }
 }
