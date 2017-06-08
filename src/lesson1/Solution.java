@@ -1,4 +1,4 @@
-package task1;
+package lesson1;
 
 /**
  * Created by tsalakhe on 07.06.2017.
