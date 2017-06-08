@@ -1,6 +1,5 @@
-package lesson2;
+package lesson2.task1;
 
-import lesson2.Solution;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
