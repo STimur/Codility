@@ -28,21 +28,29 @@ public class Solution {
         binaryGapStartIndex = binaryIntegerString.indexOf("10") + 1;
     }
 
-    private void findNextBinaryGapCandidate() {
-        binaryGapStartIndex = binaryIntegerString.indexOf("10", binaryGapStartIndex + binaryGapLength) + 1;
+    private boolean binaryGapCandidateFound() {
+        return binaryGapStartIndex != 0;
     }
 
     private void checkBinaryGapCandidate() {
         for (int j = 1; binaryGapStartIndex + j < binaryIntegerString.length(); j++) {
-            if (binaryIntegerString.charAt(binaryGapStartIndex + j) == '1') {
-                if (j > binaryGapLength)
-                    binaryGapLength = j;
+            if (isBinaryGapOfLength(j)) {
+                setBinaryGapLength(j);
                 break;
             }
         }
     }
 
-    private boolean binaryGapCandidateFound() {
-        return binaryGapStartIndex != 0;
+    private void setBinaryGapLength(int binaryGapLength) {
+        if (this.binaryGapLength < binaryGapLength)
+            this.binaryGapLength = binaryGapLength;
+    }
+
+    private boolean isBinaryGapOfLength(int length) {
+        return binaryIntegerString.charAt(binaryGapStartIndex + length) == '1';
+    }
+
+    private void findNextBinaryGapCandidate() {
+        binaryGapStartIndex = binaryIntegerString.indexOf("10", binaryGapStartIndex + binaryGapLength) + 1;
     }
 }
