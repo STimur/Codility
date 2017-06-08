@@ -4,25 +4,27 @@ package task1;
  * Created by tsalakhe on 07.06.2017.
  */
 public class Solution {
+    private int binaryGapLength = 0;
+    private int binaryGapStartIndex;
+
     public int solution(int N) {
-        if (N > 3)
+        if (N > 4)
             return calcBinaryGap(Integer.toBinaryString(N));
-        return 0;
+        return binaryGapLength;
     }
 
     private int calcBinaryGap(String s) {
-        int res = 0;
-        int i = s.indexOf("10");
-        while (i != -1) {
-            for (int j = 2; i+j < s.length(); j++) {
-                if (s.charAt(i + j) == '1') {
-                    if (j-1 > res)
-                        res = j - 1;
+        binaryGapStartIndex = s.indexOf("10") + 1;
+        while (binaryGapStartIndex != 0) {
+            for (int j = 1; binaryGapStartIndex + j < s.length(); j++) {
+                if (s.charAt(binaryGapStartIndex + j) == '1') {
+                    if (j > binaryGapLength)
+                        binaryGapLength = j;
                     break;
                 }
             }
-            i = s.indexOf("10", i + res + 1);
+            binaryGapStartIndex = s.indexOf("10", binaryGapStartIndex + binaryGapLength) + 1;
         }
-        return res;
+        return binaryGapLength;
     }
 }
