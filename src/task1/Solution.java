@@ -4,27 +4,45 @@ package task1;
  * Created by tsalakhe on 07.06.2017.
  */
 public class Solution {
-    private int binaryGapLength = 0;
+    private int binaryGapLength;
     private int binaryGapStartIndex;
+    private String binaryIntegerString;
 
     public int solution(int N) {
-        if (N > 4)
-            return calcBinaryGap(Integer.toBinaryString(N));
+        if (N < 5)
+            return binaryGapLength;
+        binaryIntegerString = Integer.toBinaryString(N);
+        return calcBinaryGap();
+    }
+
+    private int calcBinaryGap() {
+        findBinaryGapCandidate();
+        while (binaryGapCandidateFound()) {
+            checkBinaryGapCandidate();
+            findNextBinaryGapCandidate();
+        }
         return binaryGapLength;
     }
 
-    private int calcBinaryGap(String s) {
-        binaryGapStartIndex = s.indexOf("10") + 1;
-        while (binaryGapStartIndex != 0) {
-            for (int j = 1; binaryGapStartIndex + j < s.length(); j++) {
-                if (s.charAt(binaryGapStartIndex + j) == '1') {
-                    if (j > binaryGapLength)
-                        binaryGapLength = j;
-                    break;
-                }
+    private void findBinaryGapCandidate() {
+        binaryGapStartIndex = binaryIntegerString.indexOf("10") + 1;
+    }
+
+    private void findNextBinaryGapCandidate() {
+        binaryGapStartIndex = binaryIntegerString.indexOf("10", binaryGapStartIndex + binaryGapLength) + 1;
+    }
+
+    private void checkBinaryGapCandidate() {
+        for (int j = 1; binaryGapStartIndex + j < binaryIntegerString.length(); j++) {
+            if (binaryIntegerString.charAt(binaryGapStartIndex + j) == '1') {
+                if (j > binaryGapLength)
+                    binaryGapLength = j;
+                break;
             }
-            binaryGapStartIndex = s.indexOf("10", binaryGapStartIndex + binaryGapLength) + 1;
         }
-        return binaryGapLength;
+    }
+
+    private boolean binaryGapCandidateFound() {
+        return binaryGapStartIndex != 0;
     }
 }
