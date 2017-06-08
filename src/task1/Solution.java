@@ -33,9 +33,9 @@ public class Solution {
     }
 
     private void checkBinaryGapCandidate() {
-        for (int j = 1; binaryGapStartIndex + j < binaryIntegerString.length(); j++) {
-            if (isBinaryGapOfLength(j)) {
-                setBinaryGapLength(j);
+        for (int length = 1; binaryGapStartIndex + length < binaryIntegerString.length(); length++) {
+            if (isBinaryGapOfLength(length)) {
+                setBinaryGapLength(length);
                 break;
             }
         }
