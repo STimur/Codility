@@ -22,5 +22,6 @@ public class SolutionTest {
     public void oneJumpNeeded() throws Exception {
         assertEquals(1, solution.solution(1, 2, 1));
         assertEquals(1, solution.solution(1, 3, 2));
+        assertEquals(1, solution.solution(1, 3, 3));
     }
 }
