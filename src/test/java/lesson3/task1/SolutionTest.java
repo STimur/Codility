@@ -24,4 +24,10 @@ public class SolutionTest {
         assertEquals(1, solution.solution(1, 3, 2));
         assertEquals(1, solution.solution(1, 3, 3));
     }
+
+    @Test
+    public void multipleJumpsNeeded() throws Exception {
+        assertEquals(2, solution.solution(1, 3, 1));
+        assertEquals(2, solution.solution(1, 4, 2));
+    }
 }
