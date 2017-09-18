@@ -13,5 +13,6 @@ public class SolutionTest {
     @Test
     public void oneJumpNeeded() throws Exception {
         assertEquals(1, new Solution().solution(1, 2, 1));
+        assertEquals(1, new Solution().solution(1, 3, 2));
     }
 }
