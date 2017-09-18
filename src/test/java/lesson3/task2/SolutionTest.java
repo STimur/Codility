@@ -11,4 +11,9 @@ public class SolutionTest {
         assertEquals(1, new Solution().solution(new int[]{1, 2}));
         assertEquals(1, new Solution().solution(new int[]{2, 1}));
     }
+
+    @Test
+    public void threeElementsArray() throws Exception {
+        assertEquals(0, new Solution().solution(new int[]{2, 1, 1}));
+    }
 }
