@@ -9,4 +9,9 @@ public class SolutionTest {
     public void noJumpsNeeded() throws Exception {
         assertEquals(0, new Solution().solution(1, 1, 1));
     }
+
+    @Test
+    public void oneJumpNeeded() throws Exception {
+        assertEquals(1, new Solution().solution(1, 2, 1));
+    }
 }
