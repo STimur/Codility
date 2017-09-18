@@ -1,9 +1,9 @@
 package lesson2.task1;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by tsalakhe on 18.16.2127.
@@ -11,13 +11,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SolutionTest {
     private Solution solution;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         solution = new Solution();
     }
 
     @Test
-    void testSolution() {
+    public void testSolution() {
         assertEquals(1, solution.solution(new int[]{1, 1, 1}));
         assertEquals(2, solution.solution(new int[]{1, 1, 2}));
         assertEquals(2, solution.solution(new int[]{1, 2, 1}));

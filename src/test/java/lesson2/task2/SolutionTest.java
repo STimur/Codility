@@ -1,9 +1,9 @@
 package lesson2.task2;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 /**
  * Created by tsalakhe on 18.16.2127.
@@ -11,13 +11,13 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 public class SolutionTest {
     private Solution solution;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         solution = new Solution();
     }
 
     @Test
-    void testSolution() {
+    public void testSolution() {
         assertArrayEquals(new int[]{}, solution.solution(new int[]{}, 0));
         assertArrayEquals(new int[]{0}, solution.solution(new int[]{0}, 0));
         assertArrayEquals(new int[]{0}, solution.solution(new int[]{0}, 1));
