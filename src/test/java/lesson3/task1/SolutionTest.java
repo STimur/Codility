@@ -29,5 +29,8 @@ public class SolutionTest {
     public void multipleJumpsNeeded() throws Exception {
         assertEquals(2, solution.solution(1, 3, 1));
         assertEquals(2, solution.solution(1, 4, 2));
+        assertEquals(3, solution.solution(10, 85, 30));
+        assertEquals(10, solution.solution(10, 110, 10));
+        assertEquals(8, solution.solution(1, 53, 7));
     }
 }
