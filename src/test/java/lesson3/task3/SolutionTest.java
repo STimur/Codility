@@ -9,4 +9,10 @@ public class SolutionTest {
     public void emptyArray() throws Exception {
         assertEquals(1, new Solution().solution(new int[0]));
     }
+
+    @Test
+    public void oneElementArray() throws Exception {
+        assertEquals(2, new Solution().solution(new int[]{1}));
+        assertEquals(1, new Solution().solution(new int[]{2}));
+    }
 }
