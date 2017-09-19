@@ -41,7 +41,7 @@ public class SolutionTest {
 
     @Test
     public void threeElementsArray() throws Exception {
-        assertMinDiff(new int[]{2, 1, 1}, 0);
+        assertMinDiff(intArray(2, 1, 1), 0);
     }
 
     @Test
