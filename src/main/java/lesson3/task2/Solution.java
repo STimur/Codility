@@ -5,15 +5,25 @@ public class Solution {
         int i = 0, j = A.length - 1, leftSum = A[i], rightSum = A[j];
 
         while (j - i != 1) {
-            if (leftSum >= 0 && leftSum <= rightSum) {
-                i++;
-                leftSum += A[i];
-            } else if (leftSum < 0 && leftSum > rightSum) {
-                i++;
-                leftSum += A[i];
+            if (leftSum >= 0) {
+                if (leftSum <= rightSum) {
+                    i++;
+                    leftSum += A[i];
+                } else if (rightSum >= 0) {
+                    j--;
+                    rightSum += A[j];
+                } else {
+                    j--;
+                    rightSum += A[j];
+                }
             } else {
-                j--;
-                rightSum += A[j];
+                if (leftSum > rightSum) {
+                    i++;
+                    leftSum += A[i];
+                } else {
+                    j--;
+                    rightSum += A[j];
+                }
             }
         }
 
