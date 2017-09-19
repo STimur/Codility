@@ -4,7 +4,7 @@ public class Solution {
     public int solution(int[] A) {
         int i = 0, j = A.length - 1, leftSum = A[i], rightSum = A[j];
 
-        while (j - i != 1)
+        while (j - i != 1) {
             if (leftSum <= rightSum) {
                 i++;
                 leftSum += A[i];
@@ -12,6 +12,7 @@ public class Solution {
                 j--;
                 rightSum += A[j];
             }
+        }
 
         return Math.abs(leftSum - rightSum);
     }
