@@ -13,12 +13,23 @@ public class SolutionTest {
         solution = new Solution();
     }
 
+    private void assertMissedElement(int[] array, int missedElement) {
+        assertEquals(missedElement, solution.solution(array));
+    }
+
     private int[] intArray(int... ints) {
         return ints;
     }
 
-    private void assertMissedElement(int[] array, int missedElement) {
-        assertEquals(missedElement, solution.solution(array));
+    private int[] intArrayWithoutElement(int n, int elem) {
+        int[] array = new int[n];
+        for (int i = 0; i < n; i++) {
+            if (i + 1 == elem)
+                array[i] = n + 1;
+            else
+                array[i] = i + 1;
+        }
+        return array;
     }
 
     @Test
@@ -34,10 +45,8 @@ public class SolutionTest {
 
     @Test
     public void acceptance() throws Exception {
-        assertMissedElement(intArray(2, 3, 1, 5), 4);
-        assertMissedElement(intArray(2, 3, 4, 5), 1);
-        assertMissedElement(intArray(2, 4, 1, 5), 3);
-        assertMissedElement(intArray(2, 3, 1, 4), 5);
-        assertMissedElement(intArray(5, 3, 1, 4), 2);
+        int n = 5;
+        for (int i = 1; i <= n; i++)
+            assertMissedElement(intArrayWithoutElement(n, i), i);
     }
 }
