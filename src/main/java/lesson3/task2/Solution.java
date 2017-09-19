@@ -5,7 +5,7 @@ public class Solution {
         int i = 0, j = A.length - 1, leftSum = A[i], rightSum = A[j];
 
         while (j - i != 1) {
-            if (leftSum <= rightSum) {
+            if (leftSum >= 0 && leftSum <= rightSum) {
                 i++;
                 leftSum += A[i];
             } else {
