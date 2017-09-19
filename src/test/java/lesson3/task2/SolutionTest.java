@@ -35,4 +35,9 @@ public class SolutionTest {
     public void threeElementsArray() throws Exception {
         assertMinDiff(new int[]{2, 1, 1}, 0);
     }
+
+    @Test
+    public void acceptance() throws Exception {
+        assertMinDiff(intArray(3, 1, 2, 4, 3), 1);
+    }
 }
