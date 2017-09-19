@@ -9,9 +9,9 @@ public class Solution {
         int diffCandidate = A[i] - A[j];
         while (i+1 != j) {
             if (Math.abs(diffCandidate + A[i+1]) <= Math.abs(diffCandidate - A[j-1])) {
-                diffCandidate += A[i++];
+                diffCandidate += A[++i];
             } else {
-                diffCandidate -= A[j--];
+                diffCandidate -= A[--j];
             }
         }
         return Math.abs(diffCandidate);

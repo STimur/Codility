@@ -50,6 +50,7 @@ public class SolutionTest {
     @Test
     public void acceptance() throws Exception {
         assertMinDiff(intArray(3, 1, 2, 4, 3), 1);
+        assertMinDiff(intArray(-10, -5, -3, -4, -5), 3);
     }
 
     @Test
