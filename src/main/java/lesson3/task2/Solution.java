@@ -1,22 +1,29 @@
 package lesson3.task2;
 
-import java.util.Arrays;
-
 public class Solution {
     public int solution(int[] A) {
         int leftSum = 0;
-        int rightSum = Arrays.stream(A).sum();
+        int rightSum = sum(A);
         Integer minDiff = null;
-        for (int k = 0; k < A.length - 1; k++) {
-            leftSum += A[k];
-            rightSum -= A[k];
+
+        for (int i = 0; i < A.length - 1; i++) {
+            leftSum += A[i];
+            rightSum -= A[i];
             int diff = leftSum - rightSum;
             if (minDiff == null)
                 minDiff = diff;
             else if (Math.abs(diff) < Math.abs(minDiff))
                 minDiff = diff;
         }
+
         return Math.abs(minDiff);
+    }
+
+    private int sum(int[] A) {
+        int sum = 0;
+        for (int i : A)
+            sum += i;
+        return sum;
     }
 
     public int subOptimalSolution(int[] A) {
