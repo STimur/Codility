@@ -1,6 +1,7 @@
 package lesson3.task2;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -24,6 +25,13 @@ public class SolutionTest {
         return array;
     }
 
+    private int[] bigIntArray(int n) {
+        int[] array = new int[n];
+        for (int i=0; i < n; i++)
+            array[i] = (int) (Math.random()*1000);
+        return array;
+    }
+
     @Test
     public void twoElementsArray() throws Exception {
         assertMinDiff(intArray(0, 0), 0);
@@ -39,5 +47,10 @@ public class SolutionTest {
     @Test
     public void acceptance() throws Exception {
         assertMinDiff(intArray(3, 1, 2, 4, 3), 1);
+    }
+
+    @Test
+    public void performance() throws Exception {
+        solution.solution(bigIntArray(1000));
     }
 }
