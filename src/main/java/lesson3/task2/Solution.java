@@ -8,6 +8,9 @@ public class Solution {
             if (leftSum >= 0 && leftSum <= rightSum) {
                 i++;
                 leftSum += A[i];
+            } else if (leftSum < 0 && leftSum > rightSum) {
+                i++;
+                leftSum += A[i];
             } else {
                 j--;
                 rightSum += A[j];
